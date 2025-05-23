@@ -10,11 +10,15 @@ const DetailsRecipe = () => {
     const recipe= useLoaderData();
     const {image,title,ingredients,instructions,quisine,preparetiontime,likecount,category}=recipe || {};
     
+    const [chk,setchk]= useState(true);
     const [like,setlike]=useState(parseInt(likecount))
 
     const hundleLike= ()=>{
-        const update=like+1;
-        setlike(update);
+        if(chk){
+            const update=like+1;
+            setlike(update);
+            setchk(false);
+        }
     }
     return (
         <div className='my-14'>
