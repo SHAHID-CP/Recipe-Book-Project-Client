@@ -10,7 +10,7 @@ const DetailsRecipe = () => {
     const recipe= useLoaderData();
     const {image,title,ingredients,instructions,quisine,preparetiontime,likecount,category}=recipe || {};
     
-    const [like,setlike]=useState(likecount)
+    const [like,setlike]=useState(parseInt(likecount))
 
     const hundleLike= ()=>{
         const update=like+1;
@@ -41,7 +41,7 @@ const DetailsRecipe = () => {
                                 <p className='text-sm pl-2 mb-2'>{instructions}</p>
                             </div>
                             {
-                                category.map((singlecat,index)=>(<p key={index} className='bg-[#3b83f698] w-fit px-1 rounded-2xl'> {singlecat}</p>))
+                                category.map((singlecat,index)=>(<p key={index} className='bg-[#3b83f698] w-fit px-1 rounded-2xl mb-1'> {singlecat}</p>))
                             }
                             <p className='flex items-center gap-2 my-4'><IoMdTime color='red' />{preparetiontime} min.</p>
                             <div className='flex justify-between items-center'>
