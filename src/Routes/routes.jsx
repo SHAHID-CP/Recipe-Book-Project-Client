@@ -9,6 +9,7 @@ import Addrecipe from "../Components/Addrecipe";
 import Myrecipe from "../Components/Myrecipe";
 import PrivateRoute from "../Components/PrivateRoute";
 import DetailsRecipe from "../Components/DetailsRecipe";
+import LoadingEle from "../Components/LoadingEle";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allrecipe',
+                hydrateFallbackElement: <LoadingEle></LoadingEle>,
+                loader: ()=> fetch('http://localhost:3000/recipe'),
                 element: <Allrecipe></Allrecipe>,
             },
             {
