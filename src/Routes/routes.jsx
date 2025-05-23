@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             {
                 path:'/details/:id',
                 hydrateFallbackElement: <LoadingEle></LoadingEle>,
-                loader: ({params})=> fetch(`http://localhost:3000/recipe/${params}`),
+                loader: ({params})=> fetch(`http://localhost:3000/recipe/${params.id}`),
                 element: <PrivateRoute><DetailsRecipe></DetailsRecipe></PrivateRoute>,
             }
 
