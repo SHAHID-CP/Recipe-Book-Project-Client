@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { use } from 'react';
+import { AuthContext } from '../Context/AuthContext';
 
 const Addrecipe = () => {
-    
+    const {user}= use(AuthContext);
 
     const hundleRecipe= e=>{
         e.preventDefault();
@@ -41,7 +42,7 @@ const Addrecipe = () => {
         const quisine=e.target.quisine.value;
         const preparetiontime=e.target.preparetiontime.value;
         const likecount=parseInt(e.target.likecount.value);
-        const ownerEmail='babu@gmail.com';
+        const ownerEmail=user?.email;
         
         
 
