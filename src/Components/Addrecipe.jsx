@@ -40,7 +40,7 @@ const Addrecipe = () => {
         const instructions=e.target.instructions.value;
         const quisine=e.target.quisine.value;
         const preparetiontime=e.target.preparetiontime.value;
-        const likecount=e.target.likecount.value;
+        const likecount=parseInt(e.target.likecount.value);
         const ownerEmail='babu@gmail.com';
         
         

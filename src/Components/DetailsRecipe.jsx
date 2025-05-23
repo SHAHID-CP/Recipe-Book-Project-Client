@@ -8,16 +8,29 @@ import { useLoaderData } from 'react-router';
 const DetailsRecipe = () => {
 
     const recipe= useLoaderData();
-    const {image,title,ingredients,instructions,quisine,preparetiontime,likecount,category}=recipe || {};
+    const {_id,image,title,ingredients,instructions,quisine,preparetiontime,likecount,category,ownerEmail}=recipe || {};
     
     const [chk,setchk]= useState(true);
-    const [like,setlike]=useState(parseInt(likecount))
+    const [like,setlike]=useState(likecount)
+    
 
     const hundleLike= ()=>{
         if(chk){
             const update=like+1;
             setlike(update);
             setchk(false);
+            
+            const newRecipe={image,title,ingredients,instructions,quisine,preparetiontime,likecount:like+1,ownerEmail,category}
+            fetch(`http://localhost:3000/recipe/${_id}`,{
+            method: 'PUT',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(newRecipe)
+            })
+            .then(res => res.json())
+            .then(data=>{
+            
+        })
+
         }
     }
     return (
