@@ -45,7 +45,7 @@ const Addrecipe = () => {
         
         
 
-        const obj={
+        const newRecipe={
             image,
             title,
             ingredients,
@@ -56,6 +56,20 @@ const Addrecipe = () => {
             ownerEmail,
             category
         }
+
+        fetch('http://localhost:3000/recipe',{
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(newRecipe)
+        })
+        .then(res => res.json())
+        .then(data=>{
+            if(data.insertedId){
+                console.log("db te insert hoise");
+                 e.target.reset()
+            }
+        })
+        
         
         
     }
