@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter'
 import { GiCampCookingPot } from "react-icons/gi";
 import { AiFillLike } from "react-icons/ai";
 import { IoMdTime } from "react-icons/io";
 import { useLoaderData } from 'react-router';
+import { AuthContext } from '../Context/AuthContext';
 
 const DetailsRecipe = () => {
-
+    const {user}= use(AuthContext);
     const recipe= useLoaderData();
     const {_id,image,title,ingredients,instructions,quisine,preparetiontime,likecount,category,ownerEmail}=recipe || {};
     
     const [chk,setchk]= useState(true);
     const [like,setlike]=useState(likecount)
     
-
     const hundleLike= ()=>{
+        if(user?.email===ownerEmail){
+            return
+        }
         if(chk){
             const update=like+1;
             setlike(update);
