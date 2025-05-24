@@ -19,6 +19,8 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
+                hydrateFallbackElement: <LoadingEle></LoadingEle>,
+                loader: ()=> fetch('http://localhost:3000/recipe/sort'),
                 element: <Home></Home>,
             },
             {

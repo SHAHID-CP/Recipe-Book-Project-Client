@@ -31,7 +31,10 @@ const DetailsRecipe = () => {
             })
             .then(res => res.json())
             .then(data=>{
-            
+                if(data.modifiedCount){
+
+                    alert("like this recipe")
+                }
         })
 
         }
