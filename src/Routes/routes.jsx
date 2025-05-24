@@ -20,13 +20,13 @@ const router = createBrowserRouter([
             {
                 index: true,
                 hydrateFallbackElement: <LoadingEle></LoadingEle>,
-                loader: ()=> fetch('http://localhost:3000/recipe/sort'),
+                loader: ()=> fetch('https://my-recipe-server-nine.vercel.app/recipe/sort'),
                 element: <Home></Home>,
             },
             {
                 path: '/allrecipe',
                 hydrateFallbackElement: <LoadingEle></LoadingEle>,
-                loader: ()=> fetch('http://localhost:3000/recipe'),
+                loader: ()=> fetch('https://my-recipe-server-nine.vercel.app/recipe'),
                 element: <Allrecipe></Allrecipe>,
             },
             {
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             {
                 path:'/details/:id',
                 hydrateFallbackElement: <LoadingEle></LoadingEle>,
-                loader: ({params})=> fetch(`http://localhost:3000/recipe/${params.id}`),
+                loader: ({params})=> fetch(`https://my-recipe-server-nine.vercel.app/recipe/${params.id}`),
                 element: <PrivateRoute><DetailsRecipe></DetailsRecipe></PrivateRoute>,
             }
 

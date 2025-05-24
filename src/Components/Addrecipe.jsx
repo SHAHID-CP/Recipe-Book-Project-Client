@@ -59,7 +59,7 @@ const Addrecipe = () => {
             category
         }
 
-        fetch('http://localhost:3000/recipe',{
+        fetch('https://my-recipe-server-nine.vercel.app/recipe',{
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(newRecipe)
@@ -67,7 +67,6 @@ const Addrecipe = () => {
         .then(res => res.json())
         .then(data=>{
             if(data.insertedId){
-                console.log("db te insert hoise");
                 e.target.reset()
                 toast("Recipe add successfully");
             }

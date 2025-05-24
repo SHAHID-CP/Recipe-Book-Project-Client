@@ -6,12 +6,13 @@ import { GrUpdate } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
 import { toast } from 'react-toastify';
 
+
 const MyrecipeCard = ({singleRecipe,removeSta}) => {
     const {_id,image,title,ingredients,instructions,quisine,preparetiontime,likecount,category}=singleRecipe || {};
 
     const hundleDelete= ()=>{
             removeSta(_id)
-            fetch(`http://localhost:3000/recipe/${_id}`,{
+            fetch(`https://my-recipe-server-nine.vercel.app/recipe/${_id}`,{
                 method: "DELETE"
             })
             .then(res=> res.json())
@@ -22,6 +23,8 @@ const MyrecipeCard = ({singleRecipe,removeSta}) => {
                 }
             })
     }
+
+
     return (
         <div>
             
@@ -75,6 +78,8 @@ const MyrecipeCard = ({singleRecipe,removeSta}) => {
                                     
                 </div>
             </div>
+
+
         </div>
     );
 };

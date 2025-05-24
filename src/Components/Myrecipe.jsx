@@ -4,13 +4,14 @@ import { AuthContext } from '../Context/AuthContext';
 
 const Myrecipe = () => {
     const [recipe,setrecipe] =useState([])
+    
 
     const {user}= use(AuthContext);
     const id=user?.email;
 
     useEffect(()=>{
         if(id){
-            fetch(`http://localhost:3000/user?email=${id}`)
+            fetch(`https://my-recipe-server-nine.vercel.app/user?email=${id}`)
             .then(res => res.json())
             .then(data=> setrecipe(data))
         }

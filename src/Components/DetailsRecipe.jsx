@@ -25,7 +25,7 @@ const DetailsRecipe = () => {
             setchk(false);
             
             const newRecipe={image,title,ingredients,instructions,quisine,preparetiontime,likecount:like+1,ownerEmail,category}
-            fetch(`http://localhost:3000/recipe/${_id}`,{
+            fetch(`https://my-recipe-server-nine.vercel.app/recipe/${_id}`,{
             method: 'PUT',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(newRecipe)
