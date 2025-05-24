@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import { auth } from '../Firebase/firebase.init';
 import { updateProfile } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 const Register = () => {
 
@@ -19,17 +20,15 @@ const Register = () => {
         const url = e.target.photourl.value;
 
         if(password.length < 6){
-            alert("6 charecter must");
+            toast("password 6 charecter must");
             return;
         }
         if(!/[a-z]/.test(password)){
-            
-            alert("lowercase must");
+            toast("Password Lowercase must");
             return;
         }
         if(!/[A-Z]/.test(password)){
-            
-            alert("upercase must");
+            toast("Password upercase must");
             return;
         }
 
@@ -43,17 +42,19 @@ const Register = () => {
             
             updateProfile(auth.currentUser ,obj)
             .then( () =>{
-                
+                toast("Account create successfully");
             })
-            alert("account create successfull");
             navigate('/')
+        })
+        .catch(()=>{
+            toast("Please enter a valid information");
         })
     }
 
     const hundleGoogle= () =>{
         googleLogin()
         .then( ()=>{
-            alert("google register successfull");
+            toast("Google register successfully");
             navigate('/')
         })
         

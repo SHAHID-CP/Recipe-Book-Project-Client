@@ -4,6 +4,7 @@ import Logo from './Logo';
 import { Tooltip } from 'react-tooltip'
 import { AuthContext } from '../../Context/AuthContext';
 import LoadingEle from '../LoadingEle';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const {user,logoutUser,loading}= use(AuthContext)
@@ -20,6 +21,7 @@ const Navbar = () => {
 
 
     const hundle = ()=>{
+        toast("Log out successfully");
         logoutUser() ;
     }
     

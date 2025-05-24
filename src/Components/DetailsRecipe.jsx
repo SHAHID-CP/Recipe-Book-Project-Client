@@ -5,6 +5,7 @@ import { AiFillLike } from "react-icons/ai";
 import { IoMdTime } from "react-icons/io";
 import { useLoaderData } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
+import { toast } from 'react-toastify';
 
 const DetailsRecipe = () => {
     const {user}= use(AuthContext);
@@ -32,8 +33,7 @@ const DetailsRecipe = () => {
             .then(res => res.json())
             .then(data=>{
                 if(data.modifiedCount){
-
-                    alert("like this recipe")
+                    toast("Like successfully!")
                 }
         })
 

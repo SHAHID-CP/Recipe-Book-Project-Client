@@ -4,6 +4,7 @@ import { AiFillLike } from "react-icons/ai";
 import { IoMdTime } from "react-icons/io";
 import { GrUpdate } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
+import { toast } from 'react-toastify';
 
 const MyrecipeCard = ({singleRecipe,removeSta}) => {
     const {_id,image,title,ingredients,instructions,quisine,preparetiontime,likecount,category}=singleRecipe || {};
@@ -16,6 +17,7 @@ const MyrecipeCard = ({singleRecipe,removeSta}) => {
             .then(res=> res.json())
             .then(data=>{
                 if(data.deletedCount){
+                    toast("Recime delete successfully")
                     removeSta(_id)
                 }
             })

@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
+import { toast } from 'react-toastify';
 
 const Login = () => {
 
@@ -16,14 +17,19 @@ const Login = () => {
 
         loginUser(email,password)
         .then( ()=>{
+            toast("User login successfully")
             navi(location?.state || '/')
             
+        })
+        .catch(()=>{
+            toast("Please valid email and password")
         })
     }
 
     const hundleGoogle= () =>{
         googleLogin()
         .then( ()=>{
+            toast("User login  successfully");
             navi(location?.state || '/')
         })
         

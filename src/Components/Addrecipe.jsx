@@ -1,5 +1,6 @@
 import React, { use } from 'react';
 import { AuthContext } from '../Context/AuthContext';
+import { toast } from 'react-toastify';
 
 const Addrecipe = () => {
     const {user}= use(AuthContext);
@@ -67,7 +68,8 @@ const Addrecipe = () => {
         .then(data=>{
             if(data.insertedId){
                 console.log("db te insert hoise");
-                 e.target.reset()
+                e.target.reset()
+                toast("Recipe add successfully");
             }
         })
         
