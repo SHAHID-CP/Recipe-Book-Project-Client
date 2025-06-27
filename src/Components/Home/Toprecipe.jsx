@@ -20,15 +20,15 @@ const Toprecipe = () => {
 
     return (
         <div className=' mb-12'>
-            <div className='mb-10 flex justify-between items-center'>
+            <div className='mb-12 mt-20 flex justify-between items-center'>
 
-            <h2 className='text-3xl font-bold'>Top Recipe</h2>
+            <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>Top Recipe</h2>
             <Link to='/allrecipe'>
-            <button className='btn border-none bg-white text-[#f43f5e] font-bold'>View all<FaArrowRight /></button>
+            <button className='btn border-none bg-white text-[#ff6900] font-bold'>View all<FaArrowRight /></button>
             </Link>
             </div>
             
-            <div className=' grid grid-cols-1 sm:grid-cols-3 gap-8'>
+            <div className=' grid grid-cols-1 sm:grid-cols-3 gap-12'>
                 
                 {
                     recipeList&& recipeList.map(singleRecipe=>(<HomeCard key={singleRecipe._id} singleRecipe={singleRecipe}></HomeCard>)) 

@@ -12,7 +12,8 @@ const Foooter = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-3">
-            <h2 className="text-xl font-bold">Recipe Book</h2>
+            <img className='size-12' src="https://i.ibb.co/mPH17pT/istockphoto-1687829806-612x612-prev-ui.png" alt="" />
+            <h2 className="text-xl font-bold text-[#ff5835]">Recipe Book</h2>
             <p className="text-sm ">Providing food recipe services since 2018</p>
           </div>
 
@@ -31,23 +32,23 @@ const Foooter = () => {
             <h3 className="text-sm font-medium">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link className=" hover:text-indigo-600">
+                <Link to='/' className=" hover:text-indigo-600">
                   Home
                 </Link>
               </li>
               <li>
-                <Link  className=" hover:text-indigo-600">
+                <Link to='/about' className=" hover:text-indigo-600">
                   About
                 </Link>
               </li>
               <li>
-                <Link  className=" hover:text-indigo-600">
-                  Services
+                <Link to='/contact' className=" hover:text-indigo-600">
+                  Contact
                 </Link>
               </li>
               <li>
-                <Link className=" hover:text-indigo-600">
-                  Contact
+                <Link to='/support' className=" hover:text-indigo-600">
+                  Support
                 </Link>
               </li>
             </ul>

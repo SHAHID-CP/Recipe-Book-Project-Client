@@ -1,22 +1,38 @@
 import React, { useState } from 'react';
 import HomeCard from './Home/HomeCard';
 import { NavLink, useLoaderData } from 'react-router';
+import SortButtons from './SortButtons';
 
 const Allrecipe = () => {
 
     const recipe= useLoaderData();
-    const [recipeList,setrecipeList]= useState(recipe);
+    const [sdata,setSdata]= useState(recipe)
+    const [recipeList,setrecipeList]= useState(sdata); 
 
     const hundleFilter= (data) =>{
         setrecipeList([])
         if(data==='Alldata'){
-            setrecipeList(recipe);
+            setrecipeList(sdata);
         }
         else{
-            const newData= recipe.filter(item => item.quisine === data)
+            const newData= sdata.filter(item => item.quisine === data)
             if(newData){
                 setrecipeList(newData)
             }
+        }
+    }
+    const onSort= (datas)=>{
+        if(datas==='ascending'){
+            const newDatas=[...sdata].sort((a, b) =>
+                        a.title.localeCompare(b.title)
+            );
+            setrecipeList(newDatas);
+        }
+        else if(datas==='descending'){
+            const newDatass=[...sdata].sort((a, b) =>
+                        b.title.localeCompare(a.title)
+            );
+            setrecipeList(newDatass);
         }
     }
 
@@ -26,9 +42,11 @@ const Allrecipe = () => {
             
                 
             
-                <h2 className='text-3xl font-bold mb-2'>All recipes</h2>
+                <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center'>All recipes</h2>
 
-                <details className="dropdown mb-12">
+                <div className='mb-12 flex justify-between'>
+
+                <details className="dropdown ">
                 <summary className="btn m-1">Filter</summary>
                 <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-32 p-2 shadow-sm">
                     <button onClick={()=>hundleFilter("Italian")}>
@@ -51,6 +69,10 @@ const Allrecipe = () => {
                     </button>
                 </ul>
                 </details>
+                <div>
+                    <SortButtons onSort={onSort}></SortButtons>
+                </div>
+                </div>
             
             {
                     recipeList.length === 0 && ( <p className='text-5xl text-center font-bold mt-12'>No data this category</p>)

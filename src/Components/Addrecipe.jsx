@@ -79,7 +79,7 @@ const Addrecipe = () => {
         <div className='my-12'>
             
 
-            <h2 className='text-3xl font-bold mb-12'>Recipe add</h2>
+            <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center'>Recipe add</h2>
 
 
 
