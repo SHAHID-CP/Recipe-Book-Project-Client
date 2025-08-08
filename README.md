@@ -45,3 +45,101 @@ Here are the key npm packages used in this project:
 - [`tailwindcss`] – দ্রুত ও কাস্টম স্টাইলিংয়ের জন্য
 - [`daisyui`] – Tailwind এর জন্য রেডিমেড UI কম্পোনেন্ট লাইব্রেরি
 - [`react-simple-typewriter`] - টাইপিং এনিমেশনের জন্য
+
+- ---
+
+
+## ⚙️ Installation & Setup
+
+### 📥 Clone Repositories
+
+# Clone Frontend
+```bash
+git clone https://github.com/Programming-Hero-Web-Course11/b11a10-client-side-CodesWithshahid.git
+cd b11a10-client-side-CodesWithshahid
+npm install
+npm run dev
+```
+# Clone Backend
+```bash
+git clone https://github.com/Programming-Hero-Web-Course11/b11a10-server-side-CodesWithshahid.git
+cd b11a10-server-side-CodesWitshahid
+npm install
+npm run dev
+```
+
+---
+
+## 🔒 Environment Variables
+
+### 🔹 Client (.env)
+
+```env
+VITE_API_KEY=your_firebase_key
+VITE_AUTH_DOMAIN=your_firebase_auth
+VITE_PROJECT_ID=your_project_id
+VITE_STORAGE_BUCKET=your_storage_bucket
+VITE_MESSAGING_SENDER_ID=your_sender_id
+VITE_APP_ID=your_app_id
+VITE_API_URL=https://backend-eta.vercel.app
+```
+
+### 🔹 Server (.env)
+
+```env
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
+VITE_BACKEND_URL=http://localhost:5000
+
+```
+
+---
+
+## 📤 Image Upload
+
+- Users can upload product images using Imgbb
+- Supported on both **Add** and **Update** forms
+- Upload triggered through a secure backend API
+
+---
+
+## 🚀 Deployment
+
+### 🔹 Frontend (Firebase)
+
+```bash
+npm run build
+firebase deploy
+```
+
+### 🔹 Backend (Vercel Serverless)
+
+- Routes inside `/api/` folder
+- Export handlers using CommonJS/ES6
+- Follow [Vercel Docs](https://vercel.com/docs/functions) for structure
+
+---
+
+## 🧪 Testing
+
+- Backend routes tested via Postman
+- Firebase test users used for auth
+- UI feedback tested via forms, toasts, and edge cases
+
+---
+
+## 📫 Contact
+
+📧 Email: [shaahid.045@gmail.com](mailto:shaahid.045@gmail.com)
+🔗 LinkedIn: [Shahid Islam](https://linkedin.com/in/shaahid-cp)
+
+---
+
+## 🧑‍🎓 Author
+
+Made with 💻 by **Md. Shahid Islam**
+Recipe Book Project © 2025
+
+---
+
